@@ -1,7 +1,7 @@
 -- 解答
 select t.SecondHighestSalary from
   (select t1.sal SecondHighestSalary, rownum rn from
-    select * from emp order by sal desc) t1
+    (select * from emp order by sal desc) t1
   where rownum <= 2) t
 where rn >= 2;
 -- 答案
